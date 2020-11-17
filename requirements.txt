@@ -2,3 +2,8 @@ pandas
 sqlalchemy
 pymysql
 requests
+sphinx
+hypothesis
+twine
+pytest
+wheel
