@@ -11,6 +11,8 @@ __pycache__/
 *_dev.*
 *.gz
 
+dist/
+build/
 /docs/build/
 /venv
 access.txt
