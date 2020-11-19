@@ -2,7 +2,7 @@ from .base import *
 
 __all__ =  ['base', 'formatting', 'forms', 'datacalls', 'operations', 'main']
 
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 
 from . import formatting
 from . import forms
