@@ -58,13 +58,16 @@ class BaseForm:
         return result
 
     def locations(self):
-        return [name.upper() for name in self.core.args if len(name)==3 and name.isalpha()]
+        return [name.upper() for name in self.args if len(name)==3 and name.isalpha()]
 
     def start_date(self):
         return self.load_data('startdate', datetime.datetime(1,1,1), to_datetime)
 
     def end_date(self):
         return self.load_data('enddate', datetime.datetime.now(), to_datetime)
+        
+    def station_days(self):
+        return len(self.locations()) * (self.end_date() - self.start_date()).days
 
     def quality(self):
         return self.load_data('quality', 'adjusted', type_gen=string_options('adjusted', 'reported'))
@@ -77,6 +80,7 @@ class BaseForm:
 
     def resolution(self):
         return self.load_data('resolution', 'any', type_gen=string_options('any'))
+        
 
     def requested_data_format(self):
         #remove references to this and then delete it...
